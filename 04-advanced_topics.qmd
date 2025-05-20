@@ -1,0 +1,236 @@
+---
+title: Advanced Topics
+---
+
+## Custom templates and partials
+
+:::{.columns}
+
+:::{.column width=30%}
+<kbd>[Pandoc templates](https://pandoc.org/MANUAL.html#templates)</kbd>
+:::
+
+:::{.column width=30%}
+<kbd>[Quarto journal formats](https://quarto.org/docs/journals/formats.html)</kbd>
+:::
+
+:::{.column width=30%}
+<kbd>[Custom formats](https://quarto.org/docs/extensions/formats.html)</kbd>
+:::
+
+:::
+
+<br>
+
+```{.tex filename="title.tex"}
+\title{$title$}
+\author{$for(author)$$author$$sep$ \and $endfor$}
+\date{$date$}
+```
+
+```{.yaml}
+format:
+  pdf:
+    template: template.tex
+    template-partials:
+        - title.tex
+        - biblio.tex
+        - doc-class.tex
+        - title.tex
+        - before-body.tex
+        - toc.tex
+        - after-body.tex
+        - before-bib.tex
+    include-in-header:
+        - file: include-in-header.tex
+```
+
+## Parametrized documents
+
+<kbd>[Quarto documentation on parameters](https://quarto.org/docs/computations/parameters.html)</kbd>
+
+<br>
+
+::: {.panel-tabset}
+
+## Python
+
+A source block is created with the parameters tag
+
+```{{python}}
+#| tags: [parameters]
+
+alpha = 0.1
+ratio = 0.1
+```
+
+The parameters are available in the top level environment
+
+```{{python}}
+alpha
+```
+
+## R
+
+The parameters are provided in the header
+
+```{.yaml}
+---
+format:
+  pdf:
+    documentclass: scrreprt
+    papersize: a4
+    fontsize: 12pt
+    highlight-style: a11y
+    classoption: ["oneside", "open=any"]
+    fig-format: png
+    fig-dpi: 300
+params:
+  alpha: 0.1
+  ratio: 0.1
+---
+```
+
+The parameters are available in the params list:
+
+```{{r}}
+params$alpha
+```
+
+:::
+
+```bash
+quarto render report.qmd --execute \
+  --to html \
+  --output report_1.html \
+  -P alpha:0.2 ratio:0.3
+```
+
+
+## Cross-referencing
+
+<kbd>[Quarto guide on Scholarly Writing](https://quarto.org/docs/authoring/front-matter.html)</kbd>
+
+<br>
+
+Quarto supports equation, figure, and table cross-referencing. Use `@tbl-`, `@eq-`, and so on for the corresponding reference.
+
+````markdown
+---
+bibliography: references.bib
+csl: ieee.csl
+---
+![An informative caption.](figure.png){#fig-example}
+
+See Figure @fig-example for details.
+
+```{{r}}
+#| label: fig-plot
+#| fig-cap: "Plot"
+
+plot(cars)
+```
+For example, see @fig-plot.
+
+Refer to @eq-normal
+
+$$
+f(x)=\frac{1}{\sqrt{2\pi\sigma^2}}e^{-\frac{(x-\mu )^2}{2\sigma^2}}
+$${#eq-normal}
+
+It can even read biblatex bibliographies, see [@knuth1984literate]
+````
+
+
+# Extending Pandoc and Quarto with Lua
+
+## Quarto + Lua
+
+<kbd>[Learn Lua](https://learnxinyminutes.com/lua/)</kbd>
+
+<br>
+
+Lua is a lightweight, high-level scripting language. Lua is the extension language for Pandoc (which includes an embedded Lua interpreter). This means that Quarto extensions have no additional runtime dependencies or requirements.
+
+
+A must when developing plugins in Lua is the `quarto.log.output` function
+
+```{.lua}
+function Header(el)
+  quarto.log.output("=== Handling Header ===")
+  quarto.log.output(el)
+end
+```
+
+## Filters
+
+<kbd>[Quarto Filters](https://quarto.org/docs/extensions/filters.html)</kbd>
+
+<br>
+
+```{.lua filename="image_caption_filter.lua"}
+function Image(elem)
+  if elem.caption and #elem.caption > 0 then
+    table.insert(
+        elem.caption,
+        pandoc.Str("Note: This is an auto-captioned image.")
+    )
+  end
+  return elem
+end
+```
+
+```{.yaml}
+format:
+  html:
+    filters:
+      - image_caption_filter.lua
+```
+
+Or render from the command line:
+
+```bash
+quarto render mydoc.qmd --lua-filter=image_caption_filter.lua
+```
+
+## Shortcodes
+
+<kbd>[Quarto Shortcodes](https://quarto.org/docs/extensions/shortcodes.html)</kbd>
+
+<br>
+
+```markdown
+{{< callout "Remember to cite your sources!" >}}
+```
+
+```{.lua filename="callout.lua"}
+function RawBlock(el)
+  return el
+end
+
+function callout(args, kwargs, meta)
+  local message = args[1] or "Note"
+  local txt = '<div class="callout-box">' .. message .. '</div>'
+  return pandoc.RawBlock('html', txt)
+end
+```
+
+For HTML output, we can add some style
+
+```{.css filename="custom.css"}
+.callout-box {
+  border: 1px solid #007ACC;
+  background-color: #E6F2FF;
+  padding: 1em;
+  border-radius: 5px;
+  margin: 1em 0;
+}
+```
+
+```{.yaml}
+---
+format:
+  html:
+    css: custom.css
+---
+```

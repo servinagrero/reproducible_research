@@ -1,0 +1,44 @@
+project:
+    type: book
+    output-dir: "book"
+    preview:
+        port: 8080
+
+bibliography: bibliography.bib
+
+book:
+    title: "Reproducible Research with Quarto"
+    author: "Sergio Vinagrero"
+    date: 21-05-2025
+    sidebar:
+        logo: logo_ecl.png
+        search: true
+    url: https://servinagrero.github.io/reproducible-research/
+    repo-url: https://github.com/servinagrero/reproducible_research
+    repo-subdir: book
+    repo-branch: master
+    repo-actions: [edit, issue, source]
+    image: logo_ecl.png
+    chapters:
+        - index.qmd
+        - ./01-reproducible_research.qmd
+        - ./02-pandoc_and_basics.qmd
+        - ./03-quarto.qmd
+        - ./04-advanced_topics.qmd
+        - ./05-what_else.qmd
+
+format:
+    html:
+        theme:
+            - simplex
+            - custom.scss
+        # css: styles.css
+        toc: true
+        reference-location: margin
+        citation-location: margin
+        highlight-style: arrow
+        code-line-numbers: true
+        code-overflow: wrap
+        code-copy: true
+        code-tools: true
+        code-annotations: below

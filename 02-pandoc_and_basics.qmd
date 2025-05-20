@@ -1,0 +1,154 @@
+---
+title: What is Pandoc?
+from: markdown+emoji
+---
+
+## Universal Document Converter
+
+Pandoc is a Universal Document Converter. It converts from and to hundreds of formats, such as markdown, PDF, Beamer, DOCX, HTML, EPUB, ...
+
+Pandoc is the core engine that Quarto builds upon
+
+:::{.columns}
+
+:::{.column width=30% align=center}
+<kbd>[Installation guide](https://pandoc.org/installing.html)</kdb>
+:::
+
+:::{.column width=30% align=center}
+<kbd>[Official manual](https://pandoc.org/MANUAL.html)</kbd>
+:::
+
+:::{.column width=30% align=center}
+<kbd>[Try it online](https://pandoc.org/try/)</kbd>
+:::
+
+:::
+
+## Markdown
+
+:::{.columns}
+
+:::{.column width=50%}
+<kbd>[Learn YAML](https://learnxinyminutes.com/yaml/)</kbd>
+:::
+
+:::{.column width=50%}
+<kbd>[Learn Markdown](https://learnmarkdown.com/)</kbd>
+:::
+
+:::
+
+<br>
+
+Pandoc understands directly latex macros and mathematical environments
+
+````markdown
+---
+title: "My Article"
+author: "Jane Doe"
+date: 2025-05-01
+output: pdf
+---
+
+# Header 1
+## Header 2
+### Header 3
+
+This is **bold**, _italics_, and **_emphasized_**
+- Item 1
+- Item 2
+  - Subitem 2.1
+  - Subitem 2.2
+
+[Text to display](https://quarto.org/)
+
+![Alt text](https://placehold.co/600x400)
+
+| Column 1 | Column 2 | Column 3 |
+|----------|----------|----------|
+| Data 1   | Data 2   | Data 3   |
+| Data A   | Data B   | Data C   |
+
+```{{python}}
+def add(a, b):
+    return a + b
+```
+
+We can use `$` as delimiters for inline math: $\sqrt{3x-1}+(1+x)^2$
+
+**Normal distribution**
+
+$$
+f(x)=\frac{1}{\sqrt{2\pi\sigma^2}}e^{-\frac{(x-\mu )^2}{2\sigma^2}}
+$$
+
+````
+
+## Markdown to PDF
+
+You can use Pandoc directly:
+
+```bash
+pandoc report.md -o report.pdf
+```
+
+## Extracting resources
+
+To extract images from your source doc, add the `--extract-media parameter`.
+This requires a value specifying the directory where extracted images should be saved.
+**The directory must exist before the conversion.**
+
+```bash
+pandoc report.docx -o output.md -t gfm --extract-media=img/
+```
+
+## Citations with pandoc
+
+```bash
+pandoc article.md \
+  --citeproc \
+  --bibliography references.bib \
+  --csl nature.csl \
+  -o article.pdf
+```
+
+Citation styles are controlled through [Citation Style Language (CSL)](https://github.com/citation-style-language/styles)
+
+
+## Partials and Templates
+
+
+```{.json filename="metadata.json"}
+{
+    "title": "Pandoc Partial Examples",
+    "nav": [
+        {"label": "Version 1", "href": "index1.html" },
+        {"label": "Version 2", "href": "index2.html" },
+        {"label": "Version 3", "href": "index3.html" }
+    ]
+}
+```
+
+```{.html filename="example.tmpl"}
+<!DOCTYPE html>
+<html>
+<head>
+  ${if(title)}<title>${title}</title>${endif}
+</head>
+<body>
+<nav>
+${for(nav)}<a href="${it.href}">${it.label}</a>${sep}, ${endfor}
+</nav>
+<section>
+${body}
+</section>
+</body>
+</html>
+```
+
+```bash
+pandoc --from=markdown --to=html \
+    --template=example.tmpl \
+    --metadata-file=metadata.json content.txt > example.html
+```

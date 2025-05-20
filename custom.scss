@@ -1,0 +1,40 @@
+/*-- scss:defaults --*/
+$primary: #9e2a2b;
+
+$font-family-serif: "EB Garamond" !default;
+$font-family-sans-serif: "Geist", system-ui !default;
+$font-family-monospace: "JetBrains Mono", monospace !default;
+
+$title-block-color: $primary !default;
+
+/*-- scss:rules --*/
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    color: $primary;
+    font-family: sans-serif;
+    font-weight: bold;
+    border: none;
+
+    span.header-section-number {
+        color: $primary;
+        font-family: sans-serif;
+        font-weight: bold;
+    }
+}
+
+h1 {
+    border-bottom: 2px solid $primary;
+}
+
+hr {
+    margin: 1rem;
+    border: 1px solid;
+}
+
+.column {
+    text-align: center;
+}

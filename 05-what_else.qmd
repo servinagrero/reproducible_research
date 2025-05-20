@@ -1,0 +1,42 @@
+---
+title: "After This"
+author: "Your Name"
+format: revealjs
+theme: [cosmo, default]
+---
+
+## Quarto + Science
+
+:::{.columns}
+:::{.column width=33%}
+<kbd>[Scientific Publishing](https://quarto.org/docs/scientific-markdown/)</kbd>
+:::
+
+:::{.column width=33%}
+<kbd>[Writing for Journals](https://quarto.org/docs/publishing/journals.html)</kbd>
+:::
+
+:::{.column width=33%}
+<kbd>[Quarto for Papers](https://quarto.org/docs/authoring/journals.html)</kbd>
+:::
+:::
+
+
+## Reproducible Research Resources
+
+- [The Turing Way](https://the-turing-way.netlify.app/)
+
+- [Sandve's Ten Simple Rules for Reproducible Computational Research](https://doi.org/10.1371/journal.pcbi.1003285)
+
+- [Quarto GitHub Discussions](https://github.com/quarto-dev/quarto-cli/discussions)
+
+- [Quarto YouTube Channel](https://www.youtube.com/@quarto-dev)
+
+
+## Other useful tools
+
+```{=html}
+<iframe width="100%" height="500" src="https://nbdev.fast.ai" title="Quarto Documentation"></iframe>
+<br>
+<iframe width="100%" height="500" src="https://papermill.readthedocs.io/en/latest/index.html" title="Quarto Documentation"></iframe>
+```

@@ -1,0 +1,58 @@
+---
+title: Introduction
+from: markdown+emoji
+---
+
+Welcome to this short workshop on **Reproducible Research** using [Quarto](https://quarto.org), a next-generation scientific and technical publishing system that integrates code, text, and visualizations.
+
+This session will provide a practical introduction to **reproducible workflows** for scientific and data-driven research.
+
+## Goals of the Workshop {.unnumbered}
+
+- Understand why reproducible research is needed
+
+- Learn the fundamentals of Pandoc and Quarto
+
+- See how to integrate code, data, figures, and references in a single document
+
+- Explore techniques for documenting and sharing scientific results
+
+- Discover how to extend Quarto for advanced use cases
+
+## What Is Reproducible Research? {.unnumbered}
+
+Reproducible research is the practice of producing work that can be **independently verified** and **re-executed** with the same data and code to yield the same results.
+
+- Ensures scientific integrity
+
+- Facilitates collaboration and peer review
+
+- Enhances transparency, longevity, and trust
+
+- **Makes your own work easier to revisit and update**
+
+![](https://plaky.com/blog/wp-content/uploads/2023/08/Cant-read-my-own-handwriting.jpg){fig-align=center width=65%}
+
+## What You'll Learn {.unnumbered}
+
+This workshop will guide you through:
+
+1. What Pandoc is and how it powers Quarto
+
+1. Getting started with Quarto
+
+1. Writing scientific documents with live code
+
+1. Managing citations, figures, and tables
+
+1. Advanced topics like custom templates and automation
+
+By the end, you'll be able to produce reports, papers, slides, and notebooks that are fully reproducible and easy to share.
+
+## Requirements {.unnumbered}
+
+- Basic knowledge of Markdown and either R or Python
+
+- Quarto installed: [Install guide](https://quarto.org/docs/get-started/)
+
+- An editor like RStudio or VS Code (or terminal + your favorite editor)

@@ -1,0 +1,101 @@
+---
+title: Reproducible Research
+from: markdown+emoji
+---
+
+## Why Reproducibility?
+
+- Reproducibility is essential for **trust** and **transparency** in science.
+
+- Enables others (**and your future self**) to repeat, verify, and build upon your work.
+
+- Critical for collaborative projects and scientific integrity.
+
+
+## Common Challenges
+
+:::{columns}
+:::{.column width=49%}
+**Manual, undocumented analysis steps**
+:::
+
+:::{.column width=49%}
+**Lost or inconsistent data and scripts**
+:::
+:::
+
+<br>
+
+![Image extracted from "The Fallacy of It Works On My Machine" at the Scalable Human Blog](https://scalablehuman.com/wp-content/uploads/2023/10/machone.jpg){fig-align=center width=360px}
+
+## Reproducibility vs Replication
+
+- **Reproducibility**: Using the same data and code to recreate the same results.
+
+- **Replication**: Independently collecting new data and verifying results.
+
+## Familiar Tools
+
+- **Jupyter Notebooks**: Interactive Python/R data exploration
+
+- **RMarkdown**: Literate programming in R
+
+- **Documentation generators** for your favorite language. However, documentation generators alone are not a valid solution for reproducible research.
+
+## Why Documentation Generators Are Not Enough
+
+Modern tools like Python's `help()` function, docstrings, and external documentation generators (e.g., Sphinx, Doxygen, JSDoc) are excellent at providing inline documentation for code.
+
+For example, consider the following function:
+
+```{python}
+#| echo: true
+
+def my_div(a: int, b: int) -> int:
+  """Performs the division of 2 integers
+
+  Args:
+    a: First input
+    b: Second input
+
+  Returns:
+    The result of `a/b`
+
+  Raises:
+    ArgumentError: If `b` is 0
+  """
+  if b == 0:
+    raise ArgumentError("Cannot divide by 0")
+  return a / b
+```
+
+```{python}
+help(my_div)
+```
+
+This built-in documentation helps developers understand what the function does, its parameters, and edge cases like division by zero. This is great software engineering practice, **but it's not enough for reproducible research.**
+
+
+## The Gap: Documentation vs. Reproducibility
+
+In a scientific context, we are not just concerned with how the function works. We're also interested in:
+
+- **The algorithm**: What method is being used? Is it standard division, or something numerically different?
+
+- **The data**: What data was this function applied to in your study or experiment?
+
+- **The context**: Why are we dividing these numbers? What problem are we solving?
+
+- **Reusability**: Can someone re-run your full analysis — not just read your code?
+
+
+## What Reproducible Research Requires
+
+For a research result to be fully reproducible, we must include:
+
+- **Code**: Functions, scripts, and analysis pipelines
+- **Data**: Inputs, datasets, or data generation methods
+- **Algorithm & Methodology**: Mathematical explanation, model description, assumptions
+- **Narrative**: The scientific context — what question are we answering? Why?
+- **Output**: The results, figures, and summaries
+- **Environment**: The software, versions, and settings used to produce the result

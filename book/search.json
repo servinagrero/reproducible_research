@@ -1,0 +1,382 @@
+[
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "Reproducible Research with Quarto",
+    "section": "",
+    "text": "Goals of the Workshop\nWelcome to this short workshop on Reproducible Research using Quarto, a next-generation scientific and technical publishing system that integrates code, text, and visualizations.\nThis session will provide a practical introduction to reproducible workflows for scientific and data-driven research.",
+    "crumbs": [
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Introduction</span>"
+    ]
+  },
+  {
+    "objectID": "index.html#goals-of-the-workshop",
+    "href": "index.html#goals-of-the-workshop",
+    "title": "Reproducible Research with Quarto",
+    "section": "",
+    "text": "Understand why reproducible research is needed\nLearn the fundamentals of Pandoc and Quarto\nSee how to integrate code, data, figures, and references in a single document\nExplore techniques for documenting and sharing scientific results\nDiscover how to extend Quarto for advanced use cases",
+    "crumbs": [
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Introduction</span>"
+    ]
+  },
+  {
+    "objectID": "index.html#what-is-reproducible-research",
+    "href": "index.html#what-is-reproducible-research",
+    "title": "Reproducible Research with Quarto",
+    "section": "What Is Reproducible Research?",
+    "text": "What Is Reproducible Research?\nReproducible research is the practice of producing work that can be independently verified and re-executed with the same data and code to yield the same results.\n\nEnsures scientific integrity\nFacilitates collaboration and peer review\nEnhances transparency, longevity, and trust\nMakes your own work easier to revisit and update",
+    "crumbs": [
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Introduction</span>"
+    ]
+  },
+  {
+    "objectID": "index.html#what-youll-learn",
+    "href": "index.html#what-youll-learn",
+    "title": "Reproducible Research with Quarto",
+    "section": "What You’ll Learn",
+    "text": "What You’ll Learn\nThis workshop will guide you through:\n\nWhat Pandoc is and how it powers Quarto\nGetting started with Quarto\nWriting scientific documents with live code\nManaging citations, figures, and tables\nAdvanced topics like custom templates and automation\n\nBy the end, you’ll be able to produce reports, papers, slides, and notebooks that are fully reproducible and easy to share.",
+    "crumbs": [
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Introduction</span>"
+    ]
+  },
+  {
+    "objectID": "index.html#requirements",
+    "href": "index.html#requirements",
+    "title": "Reproducible Research with Quarto",
+    "section": "Requirements",
+    "text": "Requirements\n\nBasic knowledge of Markdown and either R or Python\nQuarto installed: Install guide\nAn editor like RStudio or VS Code (or terminal + your favorite editor)",
+    "crumbs": [
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Introduction</span>"
+    ]
+  },
+  {
+    "objectID": "01-reproducible_research.html",
+    "href": "01-reproducible_research.html",
+    "title": "Reproducible Research",
+    "section": "",
+    "text": "Why Reproducibility?",
+    "crumbs": [
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Reproducible Research</span>"
+    ]
+  },
+  {
+    "objectID": "01-reproducible_research.html#why-reproducibility",
+    "href": "01-reproducible_research.html#why-reproducibility",
+    "title": "Reproducible Research",
+    "section": "",
+    "text": "Reproducibility is essential for trust and transparency in science.\nEnables others (and your future self) to repeat, verify, and build upon your work.\nCritical for collaborative projects and scientific integrity.",
+    "crumbs": [
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Reproducible Research</span>"
+    ]
+  },
+  {
+    "objectID": "01-reproducible_research.html#common-challenges",
+    "href": "01-reproducible_research.html#common-challenges",
+    "title": "Reproducible Research",
+    "section": "Common Challenges",
+    "text": "Common Challenges\n\n\nManual, undocumented analysis steps\n\n\nLost or inconsistent data and scripts\n\n\n\n\n\n\nImage extracted from “The Fallacy of It Works On My Machine” at the Scalable Human Blog",
+    "crumbs": [
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Reproducible Research</span>"
+    ]
+  },
+  {
+    "objectID": "01-reproducible_research.html#reproducibility-vs-replication",
+    "href": "01-reproducible_research.html#reproducibility-vs-replication",
+    "title": "Reproducible Research",
+    "section": "Reproducibility vs Replication",
+    "text": "Reproducibility vs Replication\n\nReproducibility: Using the same data and code to recreate the same results.\nReplication: Independently collecting new data and verifying results.",
+    "crumbs": [
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Reproducible Research</span>"
+    ]
+  },
+  {
+    "objectID": "01-reproducible_research.html#familiar-tools",
+    "href": "01-reproducible_research.html#familiar-tools",
+    "title": "Reproducible Research",
+    "section": "Familiar Tools",
+    "text": "Familiar Tools\n\nJupyter Notebooks: Interactive Python/R data exploration\nRMarkdown: Literate programming in R\nDocumentation generators for your favorite language. However, documentation generators alone are not a valid solution for reproducible research.",
+    "crumbs": [
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Reproducible Research</span>"
+    ]
+  },
+  {
+    "objectID": "01-reproducible_research.html#why-documentation-generators-are-not-enough",
+    "href": "01-reproducible_research.html#why-documentation-generators-are-not-enough",
+    "title": "Reproducible Research",
+    "section": "Why Documentation Generators Are Not Enough",
+    "text": "Why Documentation Generators Are Not Enough\nModern tools like Python’s help() function, docstrings, and external documentation generators (e.g., Sphinx, Doxygen, JSDoc) are excellent at providing inline documentation for code.\nFor example, consider the following function:\n\ndef my_div(a: int, b: int) -&gt; int:\n  \"\"\"Performs the division of 2 integers\n\n  Args:\n    a: First input\n    b: Second input\n\n  Returns:\n    The result of `a/b`\n\n  Raises:\n    ArgumentError: If `b` is 0\n  \"\"\"\n  if b == 0:\n    raise ArgumentError(\"Cannot divide by 0\")\n  return a / b\n\n\nhelp(my_div)\n\nHelp on function my_div in module __main__:\n\nmy_div(a: int, b: int) -&gt; int\n    Performs the division of 2 integers\n\n    Args:\n      a: First input\n      b: Second input\n\n    Returns:\n      The result of `a/b`\n\n    Raises:\n      ArgumentError: If `b` is 0\n\n\n\nThis built-in documentation helps developers understand what the function does, its parameters, and edge cases like division by zero. This is great software engineering practice, but it’s not enough for reproducible research.",
+    "crumbs": [
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Reproducible Research</span>"
+    ]
+  },
+  {
+    "objectID": "01-reproducible_research.html#the-gap-documentation-vs.-reproducibility",
+    "href": "01-reproducible_research.html#the-gap-documentation-vs.-reproducibility",
+    "title": "Reproducible Research",
+    "section": "The Gap: Documentation vs. Reproducibility",
+    "text": "The Gap: Documentation vs. Reproducibility\nIn a scientific context, we are not just concerned with how the function works. We’re also interested in:\n\nThe algorithm: What method is being used? Is it standard division, or something numerically different?\nThe data: What data was this function applied to in your study or experiment?\nThe context: Why are we dividing these numbers? What problem are we solving?\nReusability: Can someone re-run your full analysis — not just read your code?",
+    "crumbs": [
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Reproducible Research</span>"
+    ]
+  },
+  {
+    "objectID": "01-reproducible_research.html#what-reproducible-research-requires",
+    "href": "01-reproducible_research.html#what-reproducible-research-requires",
+    "title": "Reproducible Research",
+    "section": "What Reproducible Research Requires",
+    "text": "What Reproducible Research Requires\nFor a research result to be fully reproducible, we must include:\n\nCode: Functions, scripts, and analysis pipelines\nData: Inputs, datasets, or data generation methods\nAlgorithm & Methodology: Mathematical explanation, model description, assumptions\nNarrative: The scientific context — what question are we answering? Why?\nOutput: The results, figures, and summaries\nEnvironment: The software, versions, and settings used to produce the result",
+    "crumbs": [
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Reproducible Research</span>"
+    ]
+  },
+  {
+    "objectID": "02-pandoc_and_basics.html",
+    "href": "02-pandoc_and_basics.html",
+    "title": "What is Pandoc?",
+    "section": "",
+    "text": "Universal Document Converter\nPandoc is a Universal Document Converter. It converts from and to hundreds of formats, such as markdown, PDF, Beamer, DOCX, HTML, EPUB, …\nPandoc is the core engine that Quarto builds upon",
+    "crumbs": [
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>What is Pandoc?</span>"
+    ]
+  },
+  {
+    "objectID": "02-pandoc_and_basics.html#universal-document-converter",
+    "href": "02-pandoc_and_basics.html#universal-document-converter",
+    "title": "What is Pandoc?",
+    "section": "",
+    "text": "Installation guide\n\nOfficial manual\n\nTry it online",
+    "crumbs": [
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>What is Pandoc?</span>"
+    ]
+  },
+  {
+    "objectID": "02-pandoc_and_basics.html#markdown",
+    "href": "02-pandoc_and_basics.html#markdown",
+    "title": "What is Pandoc?",
+    "section": "Markdown",
+    "text": "Markdown\n\n\nLearn YAML\n\nLearn Markdown\n\n\n\nPandoc understands directly latex macros and mathematical environments\n---\ntitle: \"My Article\"\nauthor: \"Jane Doe\"\ndate: 2025-05-01\noutput: pdf\n---\n\n# Header 1\n## Header 2\n### Header 3\n\nThis is **bold**, _italics_, and **_emphasized_**\n- Item 1\n- Item 2\n  - Subitem 2.1\n  - Subitem 2.2\n\n[Text to display](https://quarto.org/)\n\n![Alt text](https://placehold.co/600x400)\n\n| Column 1 | Column 2 | Column 3 |\n|----------|----------|----------|\n| Data 1   | Data 2   | Data 3   |\n| Data A   | Data B   | Data C   |\n\n```{python}\ndef add(a, b):\n    return a + b\n```\n\nWe can use `$` as delimiters for inline math: $\\sqrt{3x-1}+(1+x)^2$\n\n**Normal distribution**\n\n$$\nf(x)=\\frac{1}{\\sqrt{2\\pi\\sigma^2}}e^{-\\frac{(x-\\mu )^2}{2\\sigma^2}}\n$$",
+    "crumbs": [
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>What is Pandoc?</span>"
+    ]
+  },
+  {
+    "objectID": "02-pandoc_and_basics.html#markdown-to-pdf",
+    "href": "02-pandoc_and_basics.html#markdown-to-pdf",
+    "title": "What is Pandoc?",
+    "section": "Markdown to PDF",
+    "text": "Markdown to PDF\nYou can use Pandoc directly:\npandoc report.md -o report.pdf",
+    "crumbs": [
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>What is Pandoc?</span>"
+    ]
+  },
+  {
+    "objectID": "02-pandoc_and_basics.html#extracting-resources",
+    "href": "02-pandoc_and_basics.html#extracting-resources",
+    "title": "What is Pandoc?",
+    "section": "Extracting resources",
+    "text": "Extracting resources\nTo extract images from your source doc, add the --extract-media parameter. This requires a value specifying the directory where extracted images should be saved. The directory must exist before the conversion.\npandoc report.docx -o output.md -t gfm --extract-media=img/",
+    "crumbs": [
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>What is Pandoc?</span>"
+    ]
+  },
+  {
+    "objectID": "02-pandoc_and_basics.html#citations-with-pandoc",
+    "href": "02-pandoc_and_basics.html#citations-with-pandoc",
+    "title": "What is Pandoc?",
+    "section": "Citations with pandoc",
+    "text": "Citations with pandoc\npandoc article.md \\\n  --citeproc \\\n  --bibliography references.bib \\\n  --csl nature.csl \\\n  -o article.pdf\nCitation styles are controlled through Citation Style Language (CSL)",
+    "crumbs": [
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>What is Pandoc?</span>"
+    ]
+  },
+  {
+    "objectID": "02-pandoc_and_basics.html#partials-and-templates",
+    "href": "02-pandoc_and_basics.html#partials-and-templates",
+    "title": "What is Pandoc?",
+    "section": "Partials and Templates",
+    "text": "Partials and Templates\n\n\nmetadata.json\n\n{\n    \"title\": \"Pandoc Partial Examples\",\n    \"nav\": [\n        {\"label\": \"Version 1\", \"href\": \"index1.html\" },\n        {\"label\": \"Version 2\", \"href\": \"index2.html\" },\n        {\"label\": \"Version 3\", \"href\": \"index3.html\" }\n    ]\n}\n\n\n\nexample.tmpl\n\n&lt;!DOCTYPE html&gt;\n&lt;html&gt;\n&lt;head&gt;\n  ${if(title)}&lt;title&gt;${title}&lt;/title&gt;${endif}\n&lt;/head&gt;\n&lt;body&gt;\n&lt;nav&gt;\n${for(nav)}&lt;a href=\"${it.href}\"&gt;${it.label}&lt;/a&gt;${sep}, ${endfor}\n&lt;/nav&gt;\n&lt;section&gt;\n${body}\n&lt;/section&gt;\n&lt;/body&gt;\n&lt;/html&gt;\n\npandoc --from=markdown --to=html \\\n    --template=example.tmpl \\\n    --metadata-file=metadata.json content.txt &gt; example.html",
+    "crumbs": [
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>What is Pandoc?</span>"
+    ]
+  },
+  {
+    "objectID": "03-quarto.html",
+    "href": "03-quarto.html",
+    "title": "An overview of Quarto",
+    "section": "",
+    "text": "What is Quarto?",
+    "crumbs": [
+      "<span class='chapter-number'>4</span>  <span class='chapter-title'>An overview of Quarto</span>"
+    ]
+  },
+  {
+    "objectID": "03-quarto.html#what-is-quarto",
+    "href": "03-quarto.html#what-is-quarto",
+    "title": "An overview of Quarto",
+    "section": "",
+    "text": "Scientific and technical publishing system\nCombines Markdown + executable code (Python, R, Julia, JS)\nBased on Pandoc, but much more convenient\nGreat for reproducible reports, blogs, books, presentations",
+    "crumbs": [
+      "<span class='chapter-number'>4</span>  <span class='chapter-title'>An overview of Quarto</span>"
+    ]
+  },
+  {
+    "objectID": "03-quarto.html#supported-output-formats",
+    "href": "03-quarto.html#supported-output-formats",
+    "title": "An overview of Quarto",
+    "section": "Supported Output Formats",
+    "text": "Supported Output Formats\nThe main common output formats are\n\nArticles & Reports\nPresentations\nDashboards\nWebsites\nBlogs\nBooks\nInteractive Docs\n\nYou can take a look at the Quarto gallery to see the possibilities.\nDue to the structure of the documents, the same input quarto document can be rendered as many different output formats without major changes.\nThe configuration of the different output formats needs to be added in the YAML header.",
+    "crumbs": [
+      "<span class='chapter-number'>4</span>  <span class='chapter-title'>An overview of Quarto</span>"
+    ]
+  },
+  {
+    "objectID": "03-quarto.html#environment",
+    "href": "03-quarto.html#environment",
+    "title": "An overview of Quarto",
+    "section": "Environment",
+    "text": "Environment\nInstalling Quarto\nAdditionally, we need to install some dependencies depending on the language of preference\n\nPythonR and knitrJulia\n\n\npython3 -m pip install ipython jupyter jupyter-cache\n\n\ninstall.packages(\"knitr\", deps=TRUE)\n\n\nusing Pkg\nPkg.add(\"IJulia\")\nPkg.add(\"Revise\")",
+    "crumbs": [
+      "<span class='chapter-number'>4</span>  <span class='chapter-title'>An overview of Quarto</span>"
+    ]
+  },
+  {
+    "objectID": "03-quarto.html#first-example-report.qmd",
+    "href": "03-quarto.html#first-example-report.qmd",
+    "title": "An overview of Quarto",
+    "section": "First Example: report.qmd",
+    "text": "First Example: report.qmd\n---\ntitle: \"Example Report\"\nauthor: \"My name\"\ndate: today\nformat:\n  html:\n    toc: true\n    html-math-method: katex\n    css: styles.css\n  pdf:\n    keep-tex: true\n    fontsize: 11pt\n    highlight-style: a11y\n    biblio-title: \"Bibliography\"\n    classoption: \"numbers=noenddot,abstract=on,oneside\"\n---\n\n## Introduction\n\nThis document shows a simple code example.\n\n```{python}\n#| echo: true\n#| code-fold: true\n#| code-summary: \"Show the code\"\n#| fig-align: center\n#| fig-label: simple_plot\nx = [1, 2, 3]\ny = [4, 6, 2]\nimport matplotlib.pyplot as plt #&lt;1&gt;\nplt.plot(x, y)                  #&lt;2&gt;\nplt.title(\"Simple Plot\")        #&lt;2&gt;\nplt.show()                      #&lt;2&gt;\n```\n1. Load `matplotlib` module\n2. Create the plot and show it\n\n```{python}\n#| echo: false\n#| label: tbl-planets\n#| tbl-cap: Astronomical object\n\nfrom IPython.display import Markdown\nfrom tabulate import tabulate\ntable = [[\"Sun\",\"696,000\",1.989e30],\n         [\"Earth\",\"6,371\",5.972e24],\n         [\"Moon\",\"1,737\",7.34e22],\n         [\"Mars\",\"3,390\",6.39e23]]\nMarkdown(tabulate(\n  table,\n  headers=[\"Astronomical object\",\"R (km)\", \"mass (kg)\"]\n))\n```\n\nTo render the document to the desired output, use render\nquarto render report.qmd --to pdf\nWhen working on a project is occasionally better to see changes in real time as you update things. For that use preview\nquarto preview report.qmd --to pdf\n\nBelow is the output of the code presented above\n\n\nShow the code\nx = [1, 2, 3]\ny = [4, 6, 2]\n1import matplotlib.pyplot as plt\n2plt.plot(x, y)\nplt.title(\"Simple Plot\")\nplt.show()\n\n\n\n1\n\nLoad matplotlib module\n\n2\n\nCreate the plot and show it\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTable 1: Astronomical object\n\n\n\n\n\n\nAstronomical object\nR (km)\nmass (kg)\n\n\n\n\nSun\n696,000\n1.989e+30\n\n\nEarth\n6,371\n5.972e+24\n\n\nMoon\n1,737\n7.34e+22\n\n\nMars\n3,390\n6.39e+23",
+    "crumbs": [
+      "<span class='chapter-number'>4</span>  <span class='chapter-title'>An overview of Quarto</span>"
+    ]
+  },
+  {
+    "objectID": "03-quarto.html#notebooks",
+    "href": "03-quarto.html#notebooks",
+    "title": "An overview of Quarto",
+    "section": "Notebooks",
+    "text": "Notebooks\nQuarto notebooks\n\nQuarto can render Jupyter notebooks represented as plain text (.qmd) or as a normal notebook file (.ipynb).\nquarto preview notebook.ipynb --to pdf\nquarto render notebook.ipynb --to docx",
+    "crumbs": [
+      "<span class='chapter-number'>4</span>  <span class='chapter-title'>An overview of Quarto</span>"
+    ]
+  },
+  {
+    "objectID": "03-quarto.html#cache-and-freezing-results",
+    "href": "03-quarto.html#cache-and-freezing-results",
+    "title": "An overview of Quarto",
+    "section": "Cache and freezing results",
+    "text": "Cache and freezing results\nQuarto documentation on caching\n\nIf you are working within a project and your main concern is the cumulative impact of rendering many documents at once, consider using the freeze option.\nYou can use the freeze option to denote that computational documents should never be re-rendered during a global project render, or alternatively only be re-rendered when their source file changes:\n---\ntitle: \"My Document\"\nformat: html\nexecute:\n  cache: true\n  freeze: true  # never re-render during project render\n  freeze: auto  # re-render only when source changes\n---\n# use a cache (even if the document options don't enable it)\nquarto render example.qmd --cache\n\n# don't use a cache (even if the documentation options enable it)\nquarto render example.qmd --no-cache\n\n# use a cache and force a refresh (even if the cells haven't changed)\nquarto render example.qmd --cache-refresh",
+    "crumbs": [
+      "<span class='chapter-number'>4</span>  <span class='chapter-title'>An overview of Quarto</span>"
+    ]
+  },
+  {
+    "objectID": "04-advanced_topics.html",
+    "href": "04-advanced_topics.html",
+    "title": "Advanced Topics",
+    "section": "",
+    "text": "Custom templates and partials",
+    "crumbs": [
+      "<span class='chapter-number'>5</span>  <span class='chapter-title'>Advanced Topics</span>"
+    ]
+  },
+  {
+    "objectID": "04-advanced_topics.html#custom-templates-and-partials",
+    "href": "04-advanced_topics.html#custom-templates-and-partials",
+    "title": "Advanced Topics",
+    "section": "",
+    "text": "Pandoc templates\n\nQuarto journal formats\n\nCustom formats\n\n\n\n\n\ntitle.tex\n\n\\title{$title$}\n\\author{$for(author)$$author$$sep$ \\and $endfor$}\n\\date{$date$}\n\nformat:\n  pdf:\n    template: template.tex\n    template-partials:\n        - title.tex\n        - biblio.tex\n        - doc-class.tex\n        - title.tex\n        - before-body.tex\n        - toc.tex\n        - after-body.tex\n        - before-bib.tex\n    include-in-header:\n        - file: include-in-header.tex",
+    "crumbs": [
+      "<span class='chapter-number'>5</span>  <span class='chapter-title'>Advanced Topics</span>"
+    ]
+  },
+  {
+    "objectID": "04-advanced_topics.html#parametrized-documents",
+    "href": "04-advanced_topics.html#parametrized-documents",
+    "title": "Advanced Topics",
+    "section": "Parametrized documents",
+    "text": "Parametrized documents\nQuarto documentation on parameters\n\n\nPythonR\n\n\nA source block is created with the parameters tag\n```{python}\n#| tags: [parameters]\n\nalpha = 0.1\nratio = 0.1\n```\nThe parameters are available in the top level environment\n```{python}\nalpha\n```\n\n\nThe parameters are provided in the header\n---\nformat:\n  pdf:\n    documentclass: scrreprt\n    papersize: a4\n    fontsize: 12pt\n    highlight-style: a11y\n    classoption: [\"oneside\", \"open=any\"]\n    fig-format: png\n    fig-dpi: 300\nparams:\n  alpha: 0.1\n  ratio: 0.1\n---\nThe parameters are available in the params list:\n```{r}\nparams$alpha\n```\n\n\n\nquarto render report.qmd --execute \\\n  --to html \\\n  --output report_1.html \\\n  -P alpha:0.2 ratio:0.3",
+    "crumbs": [
+      "<span class='chapter-number'>5</span>  <span class='chapter-title'>Advanced Topics</span>"
+    ]
+  },
+  {
+    "objectID": "04-advanced_topics.html#cross-referencing",
+    "href": "04-advanced_topics.html#cross-referencing",
+    "title": "Advanced Topics",
+    "section": "Cross-referencing",
+    "text": "Cross-referencing\nQuarto guide on Scholarly Writing\n\nQuarto supports equation, figure, and table cross-referencing. Use @tbl-, @eq-, and so on for the corresponding reference.\n---\nbibliography: references.bib\ncsl: ieee.csl\n---\n![An informative caption.](figure.png){#fig-example}\n\nSee Figure @fig-example for details.\n\n```{r}\n#| label: fig-plot\n#| fig-cap: \"Plot\"\n\nplot(cars)\n```\nFor example, see @fig-plot.\n\nRefer to @eq-normal\n\n$$\nf(x)=\\frac{1}{\\sqrt{2\\pi\\sigma^2}}e^{-\\frac{(x-\\mu )^2}{2\\sigma^2}}\n$${#eq-normal}\n\nIt can even read biblatex bibliographies, see [@knuth1984literate]",
+    "crumbs": [
+      "<span class='chapter-number'>5</span>  <span class='chapter-title'>Advanced Topics</span>"
+    ]
+  },
+  {
+    "objectID": "04-advanced_topics.html#quarto-lua",
+    "href": "04-advanced_topics.html#quarto-lua",
+    "title": "Advanced Topics",
+    "section": "Quarto + Lua",
+    "text": "Quarto + Lua\nLearn Lua\n\nLua is a lightweight, high-level scripting language. Lua is the extension language for Pandoc (which includes an embedded Lua interpreter). This means that Quarto extensions have no additional runtime dependencies or requirements.\nA must when developing plugins in Lua is the quarto.log.output function\nfunction Header(el)\n  quarto.log.output(\"=== Handling Header ===\")\n  quarto.log.output(el)\nend",
+    "crumbs": [
+      "<span class='chapter-number'>5</span>  <span class='chapter-title'>Advanced Topics</span>"
+    ]
+  },
+  {
+    "objectID": "04-advanced_topics.html#filters",
+    "href": "04-advanced_topics.html#filters",
+    "title": "Advanced Topics",
+    "section": "Filters",
+    "text": "Filters\nQuarto Filters\n\n\n\nimage_caption_filter.lua\n\nfunction Image(elem)\n  if elem.caption and #elem.caption &gt; 0 then\n    table.insert(\n        elem.caption,\n        pandoc.Str(\"Note: This is an auto-captioned image.\")\n    )\n  end\n  return elem\nend\n\nformat:\n  html:\n    filters:\n      - image_caption_filter.lua\nOr render from the command line:\nquarto render mydoc.qmd --lua-filter=image_caption_filter.lua",
+    "crumbs": [
+      "<span class='chapter-number'>5</span>  <span class='chapter-title'>Advanced Topics</span>"
+    ]
+  },
+  {
+    "objectID": "04-advanced_topics.html#shortcodes",
+    "href": "04-advanced_topics.html#shortcodes",
+    "title": "Advanced Topics",
+    "section": "Shortcodes",
+    "text": "Shortcodes\nQuarto Shortcodes\n\n{{&lt; callout \"Remember to cite your sources!\" &gt;}}\n\n\ncallout.lua\n\nfunction RawBlock(el)\n  return el\nend\n\nfunction callout(args, kwargs, meta)\n  local message = args[1] or \"Note\"\n  local txt = '&lt;div class=\"callout-box\"&gt;' .. message .. '&lt;/div&gt;'\n  return pandoc.RawBlock('html', txt)\nend\n\nFor HTML output, we can add some style\n\n\ncustom.css\n\n.callout-box {\n  border: 1px solid #007ACC;\n  background-color: #E6F2FF;\n  padding: 1em;\n  border-radius: 5px;\n  margin: 1em 0;\n}\n\n---\nformat:\n  html:\n    css: custom.css\n---",
+    "crumbs": [
+      "<span class='chapter-number'>5</span>  <span class='chapter-title'>Advanced Topics</span>"
+    ]
+  },
+  {
+    "objectID": "05-what_else.html",
+    "href": "05-what_else.html",
+    "title": "After This",
+    "section": "",
+    "text": "Quarto + Science",
+    "crumbs": [
+      "<span class='chapter-number'>6</span>  <span class='chapter-title'>After This</span>"
+    ]
+  },
+  {
+    "objectID": "05-what_else.html#quarto-science",
+    "href": "05-what_else.html#quarto-science",
+    "title": "After This",
+    "section": "",
+    "text": "Scientific Publishing\n\nWriting for Journals\n\nQuarto for Papers",
+    "crumbs": [
+      "<span class='chapter-number'>6</span>  <span class='chapter-title'>After This</span>"
+    ]
+  },
+  {
+    "objectID": "05-what_else.html#reproducible-research-resources",
+    "href": "05-what_else.html#reproducible-research-resources",
+    "title": "After This",
+    "section": "Reproducible Research Resources",
+    "text": "Reproducible Research Resources\n\nThe Turing Way\nSandve’s Ten Simple Rules for Reproducible Computational Research\nQuarto GitHub Discussions\nQuarto YouTube Channel",
+    "crumbs": [
+      "<span class='chapter-number'>6</span>  <span class='chapter-title'>After This</span>"
+    ]
+  },
+  {
+    "objectID": "05-what_else.html#other-useful-tools",
+    "href": "05-what_else.html#other-useful-tools",
+    "title": "After This",
+    "section": "Other useful tools",
+    "text": "Other useful tools",
+    "crumbs": [
+      "<span class='chapter-number'>6</span>  <span class='chapter-title'>After This</span>"
+    ]
+  }
+]

@@ -1,2 +1,3 @@
-# reproducible_research
-Workshop on Reproducible and Literate Research
+# Reproducible Research using Quarto
+
+Workshop on Reproducible Research using Quarto
