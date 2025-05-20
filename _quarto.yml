@@ -1,10 +1,8 @@
 project:
     type: book
-    output-dir: "book"
+    output-dir: docs
     preview:
         port: 8080
-
-bibliography: bibliography.bib
 
 book:
     title: "Reproducible Research with Quarto"

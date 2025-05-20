@@ -137,7 +137,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <div class="sidebar-title mb-0 py-0">
       <a href="./">Reproducible Research with Quarto</a> 
         <div class="sidebar-tools-main">
-    <a href="https://github.com/servinagrero/reproducible_research/tree/master/book/" title="Source Code" class="quarto-navigation-tool px-1" aria-label="Source Code"><i class="bi bi-github"></i></a>
+    <a href="https://github.com/servinagrero/reproducible_research/tree/master/docs/" title="Source Code" class="quarto-navigation-tool px-1" aria-label="Source Code"><i class="bi bi-github"></i></a>
 </div>
     </div>
       </div>
@@ -202,7 +202,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <li><a href="#the-gap-documentation-vs.-reproducibility" id="toc-the-gap-documentation-vs.-reproducibility" class="nav-link" data-scroll-target="#the-gap-documentation-vs.-reproducibility">The Gap: Documentation vs.&nbsp;Reproducibility</a></li>
   <li><a href="#what-reproducible-research-requires" id="toc-what-reproducible-research-requires" class="nav-link" data-scroll-target="#what-reproducible-research-requires">What Reproducible Research Requires</a></li>
   </ul>
-<div class="toc-actions"><ul><li><a href="https://github.com/servinagrero/reproducible_research/edit/master/book/01-reproducible_research.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/servinagrero/reproducible_research/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li><li><a href="https://github.com/servinagrero/reproducible_research/blob/master/book/01-reproducible_research.qmd" class="toc-action"><i class="bi empty"></i>View source</a></li></ul></div></nav>
+<div class="toc-actions"><ul><li><a href="https://github.com/servinagrero/reproducible_research/edit/master/docs/01-reproducible_research.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/servinagrero/reproducible_research/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li><li><a href="https://github.com/servinagrero/reproducible_research/blob/master/docs/01-reproducible_research.qmd" class="toc-action"><i class="bi empty"></i>View source</a></li></ul></div></nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
@@ -271,7 +271,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <h2 class="anchored" data-anchor-id="why-documentation-generators-are-not-enough">Why Documentation Generators Are Not Enough</h2>
 <p>Modern tools like Python’s <code>help()</code> function, docstrings, and external documentation generators (e.g., Sphinx, Doxygen, JSDoc) are excellent at providing inline documentation for code.</p>
 <p>For example, consider the following function:</p>
-<div id="75b962d7" class="cell" data-execution_count="1">
+<div id="7c0c8ddc" class="cell" data-execution_count="1">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1"></a><span class="kw">def</span> my_div(a: <span class="bu">int</span>, b: <span class="bu">int</span>) <span class="op">-&gt;</span> <span class="bu">int</span>:</span>
 <span id="cb1-2"><a href="#cb1-2"></a>  <span class="co">"""Performs the division of 2 integers</span></span>
 <span id="cb1-3"><a href="#cb1-3"></a></span>
@@ -289,7 +289,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb1-15"><a href="#cb1-15"></a>    <span class="cf">raise</span> ArgumentError(<span class="st">"Cannot divide by 0"</span>)</span>
 <span id="cb1-16"><a href="#cb1-16"></a>  <span class="cf">return</span> a <span class="op">/</span> b</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<div id="2609d2af" class="cell" data-execution_count="2">
+<div id="a7680239" class="cell" data-execution_count="2">
 <div class="sourceCode cell-code" id="cb2"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1"></a><span class="bu">help</span>(my_div)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>Help on function my_div in module __main__:
@@ -909,4 +909,4 @@ my_div(a: int, b: int) -&gt; int
 
 
 
-<footer class="footer"><div class="nav-footer"><div class="nav-footer-center"><div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/servinagrero/reproducible_research/edit/master/book/01-reproducible_research.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/servinagrero/reproducible_research/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li><li><a href="https://github.com/servinagrero/reproducible_research/blob/master/book/01-reproducible_research.qmd" class="toc-action"><i class="bi empty"></i>View source</a></li></ul></div></div></div></footer></body></html>
+<footer class="footer"><div class="nav-footer"><div class="nav-footer-center"><div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/servinagrero/reproducible_research/edit/master/docs/01-reproducible_research.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/servinagrero/reproducible_research/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li><li><a href="https://github.com/servinagrero/reproducible_research/blob/master/docs/01-reproducible_research.qmd" class="toc-action"><i class="bi empty"></i>View source</a></li></ul></div></div></div></footer></body></html>

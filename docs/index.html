@@ -6,9 +6,10 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
-<meta name="author" content="Your Name">
+<meta name="author" content="Sergio Vinagrero">
+<meta name="dcterms.date" content="2026-09-05">
 
-<title>After This – Reproducible Research with Quarto</title>
+<title>Reproducible Research with Quarto</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -66,7 +67,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
-<link href="./04-advanced_topics.html" rel="prev">
+<link href="./01-reproducible_research.html" rel="next">
 <script src="site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
@@ -76,7 +77,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <link href="site_libs/quarto-html/quarto-syntax-highlighting-f9775f88bc305a8b57378c56bec00cf4.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap-c9d5317b3ab24f7f1966293e69f0ded7.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-66ca892ddc3359e44c4060fc8ea9c6bc.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
   "copy-button": false,
@@ -117,7 +118,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./05-what_else.html"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">After This</span></a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./index.html"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Introduction</span></a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -137,7 +138,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <div class="sidebar-title mb-0 py-0">
       <a href="./">Reproducible Research with Quarto</a> 
         <div class="sidebar-tools-main">
-    <a href="https://github.com/servinagrero/reproducible_research/tree/master/book/" title="Source Code" class="quarto-navigation-tool px-1" aria-label="Source Code"><i class="bi bi-github"></i></a>
+    <a href="https://github.com/servinagrero/reproducible_research/tree/master/docs/" title="Source Code" class="quarto-navigation-tool px-1" aria-label="Source Code"><i class="bi bi-github"></i></a>
 </div>
     </div>
       </div>
@@ -150,7 +151,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <ul class="list-unstyled mt-1">
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./index.html" class="sidebar-item-text sidebar-link">
+  <a href="./index.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Introduction</span></span></a>
   </div>
 </li>
@@ -180,7 +181,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./05-what_else.html" class="sidebar-item-text sidebar-link active">
+  <a href="./05-what_else.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">After This</span></span></a>
   </div>
 </li>
@@ -194,18 +195,19 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <h2 id="toc-title">Table of contents</h2>
    
   <ul>
-  <li><a href="#quarto-science" id="toc-quarto-science" class="nav-link active" data-scroll-target="#quarto-science">Quarto + Science</a></li>
-  <li><a href="#reproducible-research-resources" id="toc-reproducible-research-resources" class="nav-link" data-scroll-target="#reproducible-research-resources">Reproducible Research Resources</a></li>
-  <li><a href="#other-useful-tools" id="toc-other-useful-tools" class="nav-link" data-scroll-target="#other-useful-tools">Other useful tools</a></li>
+  <li><a href="#goals-of-the-workshop" id="toc-goals-of-the-workshop" class="nav-link active" data-scroll-target="#goals-of-the-workshop">Goals of the Workshop</a></li>
+  <li><a href="#what-is-reproducible-research" id="toc-what-is-reproducible-research" class="nav-link" data-scroll-target="#what-is-reproducible-research">What Is Reproducible Research?</a></li>
+  <li><a href="#what-youll-learn" id="toc-what-youll-learn" class="nav-link" data-scroll-target="#what-youll-learn">What You’ll Learn</a></li>
+  <li><a href="#requirements" id="toc-requirements" class="nav-link" data-scroll-target="#requirements">Requirements</a></li>
   </ul>
-<div class="toc-actions"><ul><li><a href="https://github.com/servinagrero/reproducible_research/edit/master/book/05-what_else.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/servinagrero/reproducible_research/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li><li><a href="https://github.com/servinagrero/reproducible_research/blob/master/book/05-what_else.qmd" class="toc-action"><i class="bi empty"></i>View source</a></li></ul></div></nav>
+<div class="toc-actions"><ul><li><a href="https://github.com/servinagrero/reproducible_research/edit/master/docs/index.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/servinagrero/reproducible_research/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li><li><a href="https://github.com/servinagrero/reproducible_research/blob/master/docs/index.qmd" class="toc-action"><i class="bi empty"></i>View source</a></li></ul></div></nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<div class="quarto-title-block"><div><h1 class="title">After This</h1><button type="button" class="btn code-tools-button" id="quarto-code-tools-source"><i class="bi"></i> Code</button></div></div>
+<div class="quarto-title-block"><div><h1 class="title">Reproducible Research with Quarto</h1><button type="button" class="btn code-tools-button" id="quarto-code-tools-source"><i class="bi"></i> Code</button></div></div>
 </div>
 
 
@@ -215,10 +217,16 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <div>
     <div class="quarto-title-meta-heading">Author</div>
     <div class="quarto-title-meta-contents">
-             <p>Your Name </p>
+             <p>Sergio Vinagrero </p>
           </div>
   </div>
     
+    <div>
+    <div class="quarto-title-meta-heading">Published</div>
+    <div class="quarto-title-meta-contents">
+      <p class="date">September 5, 2026</p>
+    </div>
+  </div>
   
     
   </div>
@@ -228,32 +236,52 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </header>
 
 
-<section id="quarto-science" class="level2">
-<h2 class="anchored" data-anchor-id="quarto-science">Quarto + Science</h2>
-<div class="columns">
-<div class="column" style="width:33%;">
-<p><kbd><a href="https://quarto.org/docs/scientific-markdown/">Scientific Publishing</a></kbd></p>
-</div><div class="column" style="width:33%;">
-<p><kbd><a href="https://quarto.org/docs/publishing/journals.html">Writing for Journals</a></kbd></p>
-</div><div class="column" style="width:33%;">
-<p><kbd><a href="https://quarto.org/docs/authoring/journals.html">Quarto for Papers</a></kbd></p>
-</div>
-</div>
-</section>
-<section id="reproducible-research-resources" class="level2">
-<h2 class="anchored" data-anchor-id="reproducible-research-resources">Reproducible Research Resources</h2>
+<p>Welcome to this short workshop on <strong>Reproducible Research</strong> using <a href="https://quarto.org">Quarto</a>, a next-generation scientific and technical publishing system that integrates code, text, and visualizations.</p>
+<p>This session will provide a practical introduction to <strong>reproducible workflows</strong> for scientific and data-driven research.</p>
+<section id="goals-of-the-workshop" class="level2 unnumbered">
+<h2 class="unnumbered anchored" data-anchor-id="goals-of-the-workshop">Goals of the Workshop</h2>
 <ul>
-<li><p><a href="https://the-turing-way.netlify.app/">The Turing Way</a></p></li>
-<li><p><a href="https://doi.org/10.1371/journal.pcbi.1003285">Sandve’s Ten Simple Rules for Reproducible Computational Research</a></p></li>
-<li><p><a href="https://github.com/quarto-dev/quarto-cli/discussions">Quarto GitHub Discussions</a></p></li>
-<li><p><a href="https://www.youtube.com/@quarto-dev">Quarto YouTube Channel</a></p></li>
+<li><p>Understand why reproducible research is needed</p></li>
+<li><p>Learn the fundamentals of Pandoc and Quarto</p></li>
+<li><p>See how to integrate code, data, figures, and references in a single document</p></li>
+<li><p>Explore techniques for documenting and sharing scientific results</p></li>
+<li><p>Discover how to extend Quarto for advanced use cases</p></li>
 </ul>
 </section>
-<section id="other-useful-tools" class="level2">
-<h2 class="anchored" data-anchor-id="other-useful-tools">Other useful tools</h2>
-<iframe width="100%" height="500" src="https://nbdev.fast.ai" title="Quarto Documentation"></iframe>
-<br>
-<iframe width="100%" height="500" src="https://papermill.readthedocs.io/en/latest/index.html" title="Quarto Documentation"></iframe>
+<section id="what-is-reproducible-research" class="level2 unnumbered">
+<h2 class="unnumbered anchored" data-anchor-id="what-is-reproducible-research">What Is Reproducible Research?</h2>
+<p>Reproducible research is the practice of producing work that can be <strong>independently verified</strong> and <strong>re-executed</strong> with the same data and code to yield the same results.</p>
+<ul>
+<li><p>Ensures scientific integrity</p></li>
+<li><p>Facilitates collaboration and peer review</p></li>
+<li><p>Enhances transparency, longevity, and trust</p></li>
+<li><p><strong>Makes your own work easier to revisit and update</strong></p></li>
+</ul>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="https://plaky.com/blog/wp-content/uploads/2023/08/Cant-read-my-own-handwriting.jpg" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:65.0%"></p>
+</figure>
+</div>
+</section>
+<section id="what-youll-learn" class="level2 unnumbered">
+<h2 class="unnumbered anchored" data-anchor-id="what-youll-learn">What You’ll Learn</h2>
+<p>This workshop will guide you through:</p>
+<ol type="1">
+<li><p>What Pandoc is and how it powers Quarto</p></li>
+<li><p>Getting started with Quarto</p></li>
+<li><p>Writing scientific documents with live code</p></li>
+<li><p>Managing citations, figures, and tables</p></li>
+<li><p>Advanced topics like custom templates and automation</p></li>
+</ol>
+<p>By the end, you’ll be able to produce reports, papers, slides, and notebooks that are fully reproducible and easy to share.</p>
+</section>
+<section id="requirements" class="level2 unnumbered">
+<h2 class="unnumbered anchored" data-anchor-id="requirements">Requirements</h2>
+<ul>
+<li><p>Basic knowledge of Markdown and either R or Python</p></li>
+<li><p>Quarto installed: <a href="https://quarto.org/docs/get-started/">Install guide</a></p></li>
+<li><p>An editor like RStudio or VS Code (or terminal + your favorite editor)</p></li>
+</ul>
 
 
 <!-- -->
@@ -713,59 +741,75 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="./04-advanced_topics.html" class="pagination-link" aria-label="Advanced Topics">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Advanced Topics</span></span>
-      </a>          
   </div>
   <div class="nav-page nav-page-next">
+      <a href="./01-reproducible_research.html" class="pagination-link" aria-label="Reproducible Research">
+        <span class="nav-page-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Reproducible Research</span></span> <i class="bi bi-arrow-right-short"></i>
+      </a>
   </div>
 </nav><div class="modal fade" id="quarto-embedded-source-code-modal" tabindex="-1" aria-labelledby="quarto-embedded-source-code-modal-label" aria-hidden="true"><div class="modal-dialog modal-dialog-scrollable"><div class="modal-content"><div class="modal-header"><h5 class="modal-title" id="quarto-embedded-source-code-modal-label">Source Code</h5><button class="btn-close" data-bs-dismiss="modal"></button></div><div class="modal-body"><div class="">
 <div class="sourceCode" id="cb1" data-shortcodes="false"><pre class="sourceCode numberSource markdown number-lines code-with-copy"><code class="sourceCode markdown"><span id="cb1-1"><a href="#cb1-1"></a><span class="co">---</span></span>
-<span id="cb1-2"><a href="#cb1-2"></a><span class="an">title:</span><span class="co"> "After This"</span></span>
-<span id="cb1-3"><a href="#cb1-3"></a><span class="an">author:</span><span class="co"> "Your Name"</span></span>
-<span id="cb1-4"><a href="#cb1-4"></a><span class="an">format:</span><span class="co"> revealjs</span></span>
-<span id="cb1-5"><a href="#cb1-5"></a><span class="an">theme:</span><span class="co"> [cosmo, default]</span></span>
-<span id="cb1-6"><a href="#cb1-6"></a><span class="co">---</span></span>
+<span id="cb1-2"><a href="#cb1-2"></a><span class="an">title:</span><span class="co"> Introduction</span></span>
+<span id="cb1-3"><a href="#cb1-3"></a><span class="an">from:</span><span class="co"> markdown+emoji</span></span>
+<span id="cb1-4"><a href="#cb1-4"></a><span class="co">---</span></span>
+<span id="cb1-5"><a href="#cb1-5"></a></span>
+<span id="cb1-6"><a href="#cb1-6"></a>Welcome to this short workshop on **Reproducible Research** using <span class="co">[</span><span class="ot">Quarto</span><span class="co">](https://quarto.org)</span>, a next-generation scientific and technical publishing system that integrates code, text, and visualizations.</span>
 <span id="cb1-7"><a href="#cb1-7"></a></span>
-<span id="cb1-8"><a href="#cb1-8"></a><span class="fu">## Quarto + Science</span></span>
+<span id="cb1-8"><a href="#cb1-8"></a>This session will provide a practical introduction to **reproducible workflows** for scientific and data-driven research.</span>
 <span id="cb1-9"><a href="#cb1-9"></a></span>
-<span id="cb1-10"><a href="#cb1-10"></a>:::{.columns}</span>
-<span id="cb1-11"><a href="#cb1-11"></a>:::{.column width=33%}</span>
-<span id="cb1-12"><a href="#cb1-12"></a><span class="dt">&lt;</span><span class="kw">kbd</span><span class="dt">&gt;</span><span class="co">[</span><span class="ot">Scientific Publishing</span><span class="co">](https://quarto.org/docs/scientific-markdown/)</span><span class="dt">&lt;/</span><span class="kw">kbd</span><span class="dt">&gt;</span></span>
-<span id="cb1-13"><a href="#cb1-13"></a>:::</span>
-<span id="cb1-14"><a href="#cb1-14"></a></span>
-<span id="cb1-15"><a href="#cb1-15"></a>:::{.column width=33%}</span>
-<span id="cb1-16"><a href="#cb1-16"></a><span class="dt">&lt;</span><span class="kw">kbd</span><span class="dt">&gt;</span><span class="co">[</span><span class="ot">Writing for Journals</span><span class="co">](https://quarto.org/docs/publishing/journals.html)</span><span class="dt">&lt;/</span><span class="kw">kbd</span><span class="dt">&gt;</span></span>
-<span id="cb1-17"><a href="#cb1-17"></a>:::</span>
-<span id="cb1-18"><a href="#cb1-18"></a></span>
-<span id="cb1-19"><a href="#cb1-19"></a>:::{.column width=33%}</span>
-<span id="cb1-20"><a href="#cb1-20"></a><span class="dt">&lt;</span><span class="kw">kbd</span><span class="dt">&gt;</span><span class="co">[</span><span class="ot">Quarto for Papers</span><span class="co">](https://quarto.org/docs/authoring/journals.html)</span><span class="dt">&lt;/</span><span class="kw">kbd</span><span class="dt">&gt;</span></span>
-<span id="cb1-21"><a href="#cb1-21"></a>:::</span>
-<span id="cb1-22"><a href="#cb1-22"></a>:::</span>
+<span id="cb1-10"><a href="#cb1-10"></a><span class="fu">## Goals of the Workshop {.unnumbered}</span></span>
+<span id="cb1-11"><a href="#cb1-11"></a></span>
+<span id="cb1-12"><a href="#cb1-12"></a><span class="ss">- </span>Understand why reproducible research is needed</span>
+<span id="cb1-13"><a href="#cb1-13"></a></span>
+<span id="cb1-14"><a href="#cb1-14"></a><span class="ss">- </span>Learn the fundamentals of Pandoc and Quarto</span>
+<span id="cb1-15"><a href="#cb1-15"></a></span>
+<span id="cb1-16"><a href="#cb1-16"></a><span class="ss">- </span>See how to integrate code, data, figures, and references in a single document</span>
+<span id="cb1-17"><a href="#cb1-17"></a></span>
+<span id="cb1-18"><a href="#cb1-18"></a><span class="ss">- </span>Explore techniques for documenting and sharing scientific results</span>
+<span id="cb1-19"><a href="#cb1-19"></a></span>
+<span id="cb1-20"><a href="#cb1-20"></a><span class="ss">- </span>Discover how to extend Quarto for advanced use cases</span>
+<span id="cb1-21"><a href="#cb1-21"></a></span>
+<span id="cb1-22"><a href="#cb1-22"></a><span class="fu">## What Is Reproducible Research? {.unnumbered}</span></span>
 <span id="cb1-23"><a href="#cb1-23"></a></span>
-<span id="cb1-24"><a href="#cb1-24"></a></span>
-<span id="cb1-25"><a href="#cb1-25"></a><span class="fu">## Reproducible Research Resources</span></span>
-<span id="cb1-26"><a href="#cb1-26"></a></span>
-<span id="cb1-27"><a href="#cb1-27"></a><span class="ss">- </span><span class="co">[</span><span class="ot">The Turing Way</span><span class="co">](https://the-turing-way.netlify.app/)</span></span>
-<span id="cb1-28"><a href="#cb1-28"></a></span>
-<span id="cb1-29"><a href="#cb1-29"></a><span class="ss">- </span><span class="co">[</span><span class="ot">Sandve's Ten Simple Rules for Reproducible Computational Research</span><span class="co">](https://doi.org/10.1371/journal.pcbi.1003285)</span></span>
-<span id="cb1-30"><a href="#cb1-30"></a></span>
-<span id="cb1-31"><a href="#cb1-31"></a><span class="ss">- </span><span class="co">[</span><span class="ot">Quarto GitHub Discussions</span><span class="co">](https://github.com/quarto-dev/quarto-cli/discussions)</span></span>
-<span id="cb1-32"><a href="#cb1-32"></a></span>
-<span id="cb1-33"><a href="#cb1-33"></a><span class="ss">- </span><span class="co">[</span><span class="ot">Quarto YouTube Channel</span><span class="co">](https://www.youtube.com/@quarto-dev)</span></span>
-<span id="cb1-34"><a href="#cb1-34"></a></span>
+<span id="cb1-24"><a href="#cb1-24"></a>Reproducible research is the practice of producing work that can be **independently verified** and **re-executed** with the same data and code to yield the same results.</span>
+<span id="cb1-25"><a href="#cb1-25"></a></span>
+<span id="cb1-26"><a href="#cb1-26"></a><span class="ss">- </span>Ensures scientific integrity</span>
+<span id="cb1-27"><a href="#cb1-27"></a></span>
+<span id="cb1-28"><a href="#cb1-28"></a><span class="ss">- </span>Facilitates collaboration and peer review</span>
+<span id="cb1-29"><a href="#cb1-29"></a></span>
+<span id="cb1-30"><a href="#cb1-30"></a><span class="ss">- </span>Enhances transparency, longevity, and trust</span>
+<span id="cb1-31"><a href="#cb1-31"></a></span>
+<span id="cb1-32"><a href="#cb1-32"></a><span class="ss">- </span>**Makes your own work easier to revisit and update**</span>
+<span id="cb1-33"><a href="#cb1-33"></a></span>
+<span id="cb1-34"><a href="#cb1-34"></a><span class="al">![](https://plaky.com/blog/wp-content/uploads/2023/08/Cant-read-my-own-handwriting.jpg)</span>{fig-align=center width=65%}</span>
 <span id="cb1-35"><a href="#cb1-35"></a></span>
-<span id="cb1-36"><a href="#cb1-36"></a><span class="fu">## Other useful tools</span></span>
+<span id="cb1-36"><a href="#cb1-36"></a><span class="fu">## What You'll Learn {.unnumbered}</span></span>
 <span id="cb1-37"><a href="#cb1-37"></a></span>
-<span id="cb1-38"><a href="#cb1-38"></a><span class="in">```{=html}</span></span>
-<span id="cb1-39"><a href="#cb1-39"></a><span class="in">&lt;iframe width="100%" height="500" src="https://nbdev.fast.ai" title="Quarto Documentation"&gt;&lt;/iframe&gt;</span></span>
-<span id="cb1-40"><a href="#cb1-40"></a><span class="in">&lt;br&gt;</span></span>
-<span id="cb1-41"><a href="#cb1-41"></a><span class="in">&lt;iframe width="100%" height="500" src="https://papermill.readthedocs.io/en/latest/index.html" title="Quarto Documentation"&gt;&lt;/iframe&gt;</span></span>
-<span id="cb1-42"><a href="#cb1-42"></a><span class="in">```</span></span></code><button title="Copy to Clipboard" class="code-copy-button" data-in-quarto-modal=""><i class="bi"></i></button></pre></div>
+<span id="cb1-38"><a href="#cb1-38"></a>This workshop will guide you through:</span>
+<span id="cb1-39"><a href="#cb1-39"></a></span>
+<span id="cb1-40"><a href="#cb1-40"></a><span class="ss">1. </span>What Pandoc is and how it powers Quarto</span>
+<span id="cb1-41"><a href="#cb1-41"></a></span>
+<span id="cb1-42"><a href="#cb1-42"></a><span class="ss">1. </span>Getting started with Quarto</span>
+<span id="cb1-43"><a href="#cb1-43"></a></span>
+<span id="cb1-44"><a href="#cb1-44"></a><span class="ss">1. </span>Writing scientific documents with live code</span>
+<span id="cb1-45"><a href="#cb1-45"></a></span>
+<span id="cb1-46"><a href="#cb1-46"></a><span class="ss">1. </span>Managing citations, figures, and tables</span>
+<span id="cb1-47"><a href="#cb1-47"></a></span>
+<span id="cb1-48"><a href="#cb1-48"></a><span class="ss">1. </span>Advanced topics like custom templates and automation</span>
+<span id="cb1-49"><a href="#cb1-49"></a></span>
+<span id="cb1-50"><a href="#cb1-50"></a>By the end, you'll be able to produce reports, papers, slides, and notebooks that are fully reproducible and easy to share.</span>
+<span id="cb1-51"><a href="#cb1-51"></a></span>
+<span id="cb1-52"><a href="#cb1-52"></a><span class="fu">## Requirements {.unnumbered}</span></span>
+<span id="cb1-53"><a href="#cb1-53"></a></span>
+<span id="cb1-54"><a href="#cb1-54"></a><span class="ss">- </span>Basic knowledge of Markdown and either R or Python</span>
+<span id="cb1-55"><a href="#cb1-55"></a></span>
+<span id="cb1-56"><a href="#cb1-56"></a><span class="ss">- </span>Quarto installed: <span class="co">[</span><span class="ot">Install guide</span><span class="co">](https://quarto.org/docs/get-started/)</span></span>
+<span id="cb1-57"><a href="#cb1-57"></a></span>
+<span id="cb1-58"><a href="#cb1-58"></a><span class="ss">- </span>An editor like RStudio or VS Code (or terminal + your favorite editor)</span></code><button title="Copy to Clipboard" class="code-copy-button" data-in-quarto-modal=""><i class="bi"></i></button></pre></div>
 </div></div></div></div></div>
 </div> <!-- /content -->
 
 
 
 
-<footer class="footer"><div class="nav-footer"><div class="nav-footer-center"><div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/servinagrero/reproducible_research/edit/master/book/05-what_else.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/servinagrero/reproducible_research/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li><li><a href="https://github.com/servinagrero/reproducible_research/blob/master/book/05-what_else.qmd" class="toc-action"><i class="bi empty"></i>View source</a></li></ul></div></div></div></footer></body></html>
+<footer class="footer"><div class="nav-footer"><div class="nav-footer-center"><div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/servinagrero/reproducible_research/edit/master/docs/index.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/servinagrero/reproducible_research/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li><li><a href="https://github.com/servinagrero/reproducible_research/blob/master/docs/index.qmd" class="toc-action"><i class="bi empty"></i>View source</a></li></ul></div></div></div></footer></body></html>
